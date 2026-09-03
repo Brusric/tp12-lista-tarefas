@@ -65,6 +65,15 @@ public class Principal{
             if (tarefas[coluna][0].equals("DISPONÍVEL")){
                 System.out.print("Digite sua tarefa: ");
                 tarefas[coluna][0] = doido.nextLine();
+                int prioridade;
+                do{
+                    System.out.print("Digite a prioridade (1 a 3): ");
+                    prioridade = doido.nextInt();
+                    if (prioridade < 1 || prioridade > 3) {
+                        System.out.println("Prioridade inválida!");
+                    }
+                } while (prioridade < 1 || prioridade > 3);
+                tarefas[coluna][1] = String.valueOf(prioridade);
                 tarefas[coluna][2] = "PENDENTE";
                 System.out.println("Tarefa adicionada!");
             }
