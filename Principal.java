@@ -19,12 +19,10 @@ public class Principal{
 
             switch (opcao){
                 case 1:
-                    System.out.print("Digite uma tarefa: ");
-                    
                     cadastrarTarefa();
                     break;
                 case 2:
-                    /* funcionalidade do Desenvolvedor B */
+                    listarTarefas();
                     break;
                 case 0:
                     System.out.println("Encerrando...");
@@ -44,6 +42,7 @@ public class Principal{
 
     public static void exibirMenu() {
         System.out.println("1 - Cadastrar Tarefa");
+        System.out.println("2 - Listar Tarefas");
         System.out.println("0 - Sair");
         System.out.println("Escolha: ");
     }
@@ -67,6 +66,17 @@ public class Principal{
         }
         else{
             System.out.println("Coluna inválida!");
+        }
+    }
+
+    public static void listarTarefas(){
+        System.out.println("==LISTA DE TAREFAS==");
+        for (int i = 0; i < tarefas.length; i++) {
+            System.out.print((i+1) + " - ");
+            for (int j = 0; j < tarefas[i].length; j++) {
+                System.out.print(tarefas[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }
