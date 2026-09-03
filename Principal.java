@@ -15,7 +15,13 @@ public class Principal{
                     cadastrarTarefa();
                     break;
                 case 2:
-                    /* funcionalidade do Desenvolvedor B */
+                    /* funcionalidade do Desenvolvedor A */
+                    break;
+                case 3:
+                    /* funcionalidade do Desenvolvedor A */
+                    break;
+                case 4:
+                    filtrarPorPrioridade();
                     break;
                 case 0:
                     System.out.println("Encerrando...");
@@ -36,10 +42,15 @@ public class Principal{
     public static void exibirMenu() {
         System.out.println("1 - Cadastrar Tarefa");
         System.out.println("0 - Sair");
+        System.out.println("4 - Filtrar por Prioridade");
         System.out.println("Escolha: ");
     }
 
     public static void cadastrarTarefa() {
         System.out.println("Teste Cadastro");
+    }
+
+    public static void filtrarPorPrioridade() {
+        System.out.println("Teste Prioridade");
     }
 }
