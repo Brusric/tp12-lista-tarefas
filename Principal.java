@@ -23,6 +23,9 @@ public class Principal{
                 case 4:
                     filtrarPorPrioridade();
                     break;
+                case 5:
+                filtrarPorSituacao();
+                break;
                 case 0:
                     System.out.println("Encerrando...");
                     break;
@@ -43,6 +46,7 @@ public class Principal{
         System.out.println("1 - Cadastrar Tarefa");
         System.out.println("0 - Sair");
         System.out.println("4 - Filtrar por Prioridade");
+        System.out.println("5 - Filtrar por Situação");
         System.out.println("Escolha: ");
     }
 
@@ -52,5 +56,9 @@ public class Principal{
 
     public static void filtrarPorPrioridade() {
         System.out.println("Teste Prioridade");
+    }
+
+    public static void filtrarPorSituacao() {
+        System.out.println("Teste Situação");
     }
 }
