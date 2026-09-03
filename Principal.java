@@ -27,6 +27,15 @@ public class Principal{
                 case 3:
                     marcarComoConcluida();
                     break;
+                case 4:
+                    filtrarPorPrioridade();
+                    break;
+                case 5:
+                filtrarPorSituacao();
+                break;
+                case 6:
+                exibirEstatisticas();
+                break;
                 case 0:
                     System.out.println("Encerrando...");
                     break;
@@ -105,5 +114,17 @@ public class Principal{
         else {
             System.out.println("Tarefa inválida!");
         }
+    }
+
+    public static void filtrarPorPrioridade() {
+        System.out.println("Teste Prioridade");
+    }
+
+    public static void filtrarPorSituacao() {
+        System.out.println("Teste Situação");
+    }
+
+    public static void exibirEstatisticas() {
+        System.out.println("Teste Estatísticas");
     }
 }
