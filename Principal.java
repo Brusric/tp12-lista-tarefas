@@ -26,6 +26,9 @@ public class Principal{
                 case 5:
                 filtrarPorSituacao();
                 break;
+                case 6:
+                exibirEstatisticas();
+                break;
                 case 0:
                     System.out.println("Encerrando...");
                     break;
@@ -47,6 +50,8 @@ public class Principal{
         System.out.println("0 - Sair");
         System.out.println("4 - Filtrar por Prioridade");
         System.out.println("5 - Filtrar por Situação");
+        System.out.println("6 - Exibir Estatísticas");
+
         System.out.println("Escolha: ");
     }
 
@@ -60,5 +65,9 @@ public class Principal{
 
     public static void filtrarPorSituacao() {
         System.out.println("Teste Situação");
+    }
+
+    public static void exibirEstatisticas() {
+        System.out.println("Teste Estatísticas");
     }
 }
