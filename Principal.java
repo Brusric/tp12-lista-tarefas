@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Principal{
-    Public static void main(String[] args){
+    public static void main(String[] args){
         Scanner doido = new Scanner(System.in);
         int opcao;
 
@@ -12,7 +12,7 @@ public class Principal{
 
             switch (opcao){
                 case 1:
-                    /* funcionalidade do Desenvolvedor A */
+                    cadastrarTarefa();
                     break;
                 case 2:
                     /* funcionalidade do Desenvolvedor B */
@@ -34,8 +34,12 @@ public class Principal{
     }
 
     public static void exibirMenu() {
-        System.out.println("1 - ...");
+        System.out.println("1 - Cadastrar Tarefa");
         System.out.println("0 - Sair");
         System.out.println("Escolha: ");
+    }
+
+    public static void cadastrarTarefa() {
+        System.out.println("Teste Cadastro");
     }
 }
