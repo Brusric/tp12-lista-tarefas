@@ -1,9 +1,16 @@
 import java.util.Scanner;
 
 public class Principal{
+    static Scanner doido = new Scanner(System.in);
+    static int opcao;
+    static String[][] tarefas = new String[3][4];
     public static void main(String[] args){
-        Scanner doido = new Scanner(System.in);
-        int opcao;
+
+        for(int i = 0; i < tarefas.length; i++){
+            for(int j = 0; j < tarefas[i].length; j++){
+                tarefas[i][j] = "DISPONÍVEL";
+            } 
+        }
 
         do{
             exibirCabecalho(); // <== METODO COMPARTILHADO (ponto de conflito)
@@ -12,6 +19,8 @@ public class Principal{
 
             switch (opcao){
                 case 1:
+                    System.out.print("Digite uma tarefa: ");
+                    
                     cadastrarTarefa();
                     break;
                 case 2:
@@ -40,6 +49,24 @@ public class Principal{
     }
 
     public static void cadastrarTarefa() {
-        System.out.println("Teste Cadastro");
+        System.out.println("==CADASTRAR TAREFA==");
+        System.out.print("Digite uma coluna de 1 a 5: ");
+        int coluna = doido.nextInt();
+        doido.nextLine();
+
+        if (coluna >= 1 && coluna <= tarefas.length){
+            coluna--;
+            if (tarefas[coluna][0].equals("DISPONÍVEL")){
+                System.out.print("Digite sua tarefa: ");
+                tarefas[coluna][0] = doido.nextLine();
+                System.out.println("Tarefa adicionada!");
+            }
+            else{
+                System.out.println("Posição ocupada!");
+            }
+        }
+        else{
+            System.out.println("Coluna inválida!");
+        }
     }
 }
