@@ -162,7 +162,49 @@ public class Principal{
     }
 
     public static void filtrarPorSituacao() {
-        System.out.println("Teste Situação");
+        System.out.println("== FILTRAR POR SITUAÇÃO ==");
+
+        System.out.println("1. Pendentes");
+        System.out.println("2. Concluídas");
+        System.out.print("Escolha: ");
+
+        int opcaoSituacao = doido.nextInt();
+
+        String situacao;
+
+        if (opcaoSituacao == 1) {
+            situacao = "PENDENTE";
+
+        } else if (opcaoSituacao == 2) {
+            situacao = "CONCLUÍDA";
+
+        } else {
+            System.out.println("Opção inválida!");
+            return;
+        }
+
+        boolean encontrou = false;
+
+        for (int i = 0; i < tarefas.length; i++) {
+            if (!tarefas[i][0].equals("DISPONÍVEL")
+                    && tarefas[i][2].equals(situacao)) {
+
+                System.out.println(
+                    (i + 1) +
+                    " - Tarefa: " + tarefas[i][0] +
+                    " | Prioridade: " + tarefas[i][1] +
+                    " | Situação: " + tarefas[i][2]
+                );
+
+                encontrou = true;
+            }
+        }
+
+        if (!encontrou) {
+            System.out.println(
+                "Nenhuma tarefa foi encontrada nessa situação!"
+            );
+        }
     }
 
     public static void exibirEstatisticas() {
