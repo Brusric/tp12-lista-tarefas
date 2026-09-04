@@ -208,6 +208,36 @@ public class Principal{
     }
 
     public static void exibirEstatisticas() {
-        System.out.println("Teste Estatísticas");
+        System.out.println("== ESTATÍSTICAS ==");
+
+    int totalTarefas = 0;
+    int tarefasPendentes = 0;
+    int tarefasConcluidas = 0;
+
+    for (int i = 0; i < tarefas.length; i++) {
+
+        if (!tarefas[i][0].equals("DISPONÍVEL")) {
+
+            totalTarefas++;
+
+            if (tarefas[i][2].equals("PENDENTE")) {
+                tarefasPendentes++;
+            }
+
+            if (tarefas[i][2].equals("CONCLUÍDA")) {
+                tarefasConcluidas++;
+            }
+        }
+    }
+
+    double percentualConcluidas = 0;
+
+    if (totalTarefas > 0) {
+        percentualConcluidas = (tarefasConcluidas * 100.0) / totalTarefas;
+    }
+    System.out.println("Total de tarefas: " + totalTarefas);
+    System.out.println("Tarefas pendentes: " + tarefasPendentes);
+    System.out.println("Tarefas concluídas: " + tarefasConcluidas);
+    System.out.println("Percentual de tarefas concluídas: " + percentualConcluidas + "%");
     }
 }
