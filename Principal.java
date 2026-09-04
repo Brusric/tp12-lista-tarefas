@@ -117,7 +117,39 @@ public class Principal{
     }
 
     public static void filtrarPorPrioridade() {
-        System.out.println("Teste Prioridade");
+        System.out.println("== FILTRAR POR PRIORIDADE ==");
+
+        System.out.print("Digite a prioridade (1 a 3): ");
+        int prioridade = doido.nextInt();
+
+        if (prioridade < 1 || prioridade > 3) {
+            System.out.println("Prioridade inválida!");
+            return;
+        }
+
+        boolean encontrou = false;
+
+        for (int i = 0; i < tarefas.length; i++) {
+
+            if (!tarefas[i][0].equals("DISPONÍVEL")
+                    && tarefas[i][1].equals(String.valueOf(prioridade))) {
+
+                System.out.println(
+                    (i + 1) +
+                    " - Tarefa: " + tarefas[i][0] +
+                    " | Prioridade: " + tarefas[i][1] +
+                    " | Situação: " + tarefas[i][2]
+                );
+
+                encontrou = true;
+            }
+        }
+
+        if (!encontrou) {
+            System.out.println(
+                "Nenhuma tarefa encontrada com essa prioridade."
+            );
+        }
     }
 
     public static void filtrarPorSituacao() {
